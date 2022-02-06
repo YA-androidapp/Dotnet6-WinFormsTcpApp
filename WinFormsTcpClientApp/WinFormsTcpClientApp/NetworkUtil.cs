@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 
 
-namespace WinFormsTcpApp
+namespace WinFormsTcpClientApp
 {
     public class NetworkUtil
     {

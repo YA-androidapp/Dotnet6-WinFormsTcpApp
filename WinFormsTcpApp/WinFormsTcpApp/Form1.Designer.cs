@@ -48,14 +48,14 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(780, 351);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 10;
             // 
             // buttonSend
             // 
             this.buttonSend.Location = new System.Drawing.Point(670, 50);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(120, 31);
-            this.buttonSend.TabIndex = 1;
+            this.buttonSend.TabIndex = 9;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
             this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
@@ -65,7 +65,7 @@
             this.textBoxHost.Location = new System.Drawing.Point(10, 50);
             this.textBoxHost.Name = "textBoxHost";
             this.textBoxHost.Size = new System.Drawing.Size(150, 31);
-            this.textBoxHost.TabIndex = 2;
+            this.textBoxHost.TabIndex = 6;
             this.textBoxHost.Text = "localhost";
             // 
             // textBoxMessage
@@ -73,7 +73,7 @@
             this.textBoxMessage.Location = new System.Drawing.Point(280, 50);
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.Size = new System.Drawing.Size(380, 31);
-            this.textBoxMessage.TabIndex = 3;
+            this.textBoxMessage.TabIndex = 8;
             // 
             // numericClientPort
             // 
@@ -85,7 +85,7 @@
             0});
             this.numericClientPort.Name = "numericClientPort";
             this.numericClientPort.Size = new System.Drawing.Size(100, 31);
-            this.numericClientPort.TabIndex = 4;
+            this.numericClientPort.TabIndex = 7;
             this.numericClientPort.Value = new decimal(new int[] {
             55555,
             0,
@@ -102,7 +102,7 @@
             0});
             this.numericServerPort.Name = "numericServerPort";
             this.numericServerPort.Size = new System.Drawing.Size(100, 31);
-            this.numericServerPort.TabIndex = 5;
+            this.numericServerPort.TabIndex = 1;
             this.numericServerPort.Value = new decimal(new int[] {
             55555,
             0,
@@ -114,7 +114,7 @@
             this.buttonListen.Location = new System.Drawing.Point(120, 10);
             this.buttonListen.Name = "buttonListen";
             this.buttonListen.Size = new System.Drawing.Size(120, 31);
-            this.buttonListen.TabIndex = 6;
+            this.buttonListen.TabIndex = 2;
             this.buttonListen.Text = "Listen";
             this.buttonListen.UseVisualStyleBackColor = true;
             this.buttonListen.Click += new System.EventHandler(this.buttonListen_Click);
@@ -124,7 +124,7 @@
             this.buttonCheckIp.Location = new System.Drawing.Point(280, 10);
             this.buttonCheckIp.Name = "buttonCheckIp";
             this.buttonCheckIp.Size = new System.Drawing.Size(120, 31);
-            this.buttonCheckIp.TabIndex = 7;
+            this.buttonCheckIp.TabIndex = 3;
             this.buttonCheckIp.Text = "Check My IP";
             this.buttonCheckIp.UseVisualStyleBackColor = true;
             this.buttonCheckIp.Click += new System.EventHandler(this.buttonCheckIp_Click);
@@ -134,7 +134,7 @@
             this.labelMyIp.Location = new System.Drawing.Point(406, 10);
             this.labelMyIp.Name = "labelMyIp";
             this.labelMyIp.Size = new System.Drawing.Size(150, 31);
-            this.labelMyIp.TabIndex = 8;
+            this.labelMyIp.TabIndex = 4;
             this.labelMyIp.Text = "0.0.0.0";
             this.labelMyIp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -144,7 +144,7 @@
             this.comboBox1.Location = new System.Drawing.Point(600, 10);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(190, 33);
-            this.comboBox1.TabIndex = 9;
+            this.comboBox1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -162,7 +162,7 @@
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Server";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericClientPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericServerPort)).EndInit();
