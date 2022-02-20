@@ -2,6 +2,7 @@
 
 
 using SimpleTCP;
+using System.Text.Json;
 
 namespace WinFormsTcpApp
 {
@@ -25,11 +26,23 @@ namespace WinFormsTcpApp
                 server.Delimiter = NULL_TERMINATED;
                 server.DelimiterDataReceived += (sender, msg) =>
                 {
-                    msg.ReplyLine("Re: " + msg.MessageString);
-
                     if (form1 != null)
                     {
-                        form1.textBox1SetText("Server Received: " + msg.MessageString);
+                        var json = JsonSerializer.Deserialize<Dictionary<string, string>>(msg.MessageString);
+
+                        if (json != null)
+                        {
+                            if (json.ContainsKey("Message"))
+                            {
+                                msg.ReplyLine("Re: " + json["Message"]);
+                                form1.textBox1SetText("Server Received: " + json["Message"]);
+                            }
+
+                            if (json.ContainsKey("Screenshot"))
+                            {
+                                form1.pictureBox1SetText(NetworkUtil.Base64ToImage(json["Screenshot"]));
+                            }
+                        }
                     }
                 };
             }

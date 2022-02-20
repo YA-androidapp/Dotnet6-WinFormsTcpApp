@@ -53,7 +53,14 @@ namespace WinFormsTcpClientApp
             var port = decimal.ToInt32(numericClientPort.Value);
             if ((client != null) && (!string.IsNullOrEmpty(host)) && (!string.IsNullOrEmpty(message)))
             {
-                client.Send(host, port, message);
+                if (pictureBoxScreenShot.Image != null)
+                {
+                    client.Send(host, port, message, pictureBoxScreenShot.Image);
+                }
+                else
+                {
+                    client.Send(host, port, message, null);
+                }
             }
         }
 

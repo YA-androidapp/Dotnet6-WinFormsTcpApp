@@ -9,6 +9,29 @@ namespace WinFormsTcpApp
 {
     public class NetworkUtil
     {
+        public static Image Base64ToImage(string base64)
+        {
+            byte[] byteBuffer = Convert.FromBase64String(base64);
+            using (MemoryStream memoryStream = new MemoryStream(byteBuffer))
+            {
+                memoryStream.Position = 0;
+                return Image.FromStream(memoryStream);
+            }
+        }
+
+        public static string ImageToBase64(Image image)
+        {
+            using (var ms = new MemoryStream())
+            {
+                using (var bitmap = new Bitmap(image))
+                {
+                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    var base64encoded = Convert.ToBase64String(ms.GetBuffer());
+                    return base64encoded;
+                }
+            }
+        }
+
         public static string GetMyIp()
         {
             string myIp = "localhost";

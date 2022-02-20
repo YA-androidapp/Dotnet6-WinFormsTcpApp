@@ -44,21 +44,23 @@
             // 
             this.comboBoxHost.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxHost.FormattingEnabled = true;
-            this.comboBoxHost.Location = new System.Drawing.Point(10, 10);
+            this.comboBoxHost.Location = new System.Drawing.Point(7, 6);
+            this.comboBoxHost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxHost.Name = "comboBoxHost";
-            this.comboBoxHost.Size = new System.Drawing.Size(190, 33);
+            this.comboBoxHost.Size = new System.Drawing.Size(134, 23);
             this.comboBoxHost.TabIndex = 17;
             // 
             // numericClientPort
             // 
-            this.numericClientPort.Location = new System.Drawing.Point(210, 10);
+            this.numericClientPort.Location = new System.Drawing.Point(147, 6);
+            this.numericClientPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericClientPort.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.numericClientPort.Name = "numericClientPort";
-            this.numericClientPort.Size = new System.Drawing.Size(100, 31);
+            this.numericClientPort.Size = new System.Drawing.Size(70, 23);
             this.numericClientPort.TabIndex = 14;
             this.numericClientPort.Value = new decimal(new int[] {
             55555,
@@ -68,16 +70,18 @@
             // 
             // textBoxMessage
             // 
-            this.textBoxMessage.Location = new System.Drawing.Point(320, 10);
+            this.textBoxMessage.Location = new System.Drawing.Point(224, 6);
+            this.textBoxMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.Size = new System.Drawing.Size(344, 31);
+            this.textBoxMessage.Size = new System.Drawing.Size(242, 23);
             this.textBoxMessage.TabIndex = 13;
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(670, 10);
+            this.buttonSend.Location = new System.Drawing.Point(469, 6);
+            this.buttonSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(120, 31);
+            this.buttonSend.Size = new System.Drawing.Size(84, 23);
             this.buttonSend.TabIndex = 11;
             this.buttonSend.Text = "Send";
             this.buttonSend.UseVisualStyleBackColor = true;
@@ -85,35 +89,39 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 51);
+            this.textBox1.Location = new System.Drawing.Point(7, 31);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(780, 100);
+            this.textBox1.Size = new System.Drawing.Size(547, 62);
             this.textBox1.TabIndex = 10;
             // 
             // labelScreen
             // 
             this.labelScreen.AutoSize = true;
-            this.labelScreen.Location = new System.Drawing.Point(10, 160);
+            this.labelScreen.Location = new System.Drawing.Point(641, 6);
+            this.labelScreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelScreen.Name = "labelScreen";
-            this.labelScreen.Size = new System.Drawing.Size(59, 25);
+            this.labelScreen.Size = new System.Drawing.Size(38, 15);
             this.labelScreen.TabIndex = 18;
             this.labelScreen.Text = "label1";
             // 
             // pictureBoxScreenShot
             // 
-            this.pictureBoxScreenShot.Location = new System.Drawing.Point(146, 188);
+            this.pictureBoxScreenShot.Location = new System.Drawing.Point(7, 97);
+            this.pictureBoxScreenShot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxScreenShot.Name = "pictureBoxScreenShot";
-            this.pictureBoxScreenShot.Size = new System.Drawing.Size(457, 250);
+            this.pictureBoxScreenShot.Size = new System.Drawing.Size(766, 453);
             this.pictureBoxScreenShot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxScreenShot.TabIndex = 19;
             this.pictureBoxScreenShot.TabStop = false;
             // 
             // buttonScreenShot
             // 
-            this.buttonScreenShot.Location = new System.Drawing.Point(12, 188);
+            this.buttonScreenShot.Location = new System.Drawing.Point(683, 6);
+            this.buttonScreenShot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonScreenShot.Name = "buttonScreenShot";
-            this.buttonScreenShot.Size = new System.Drawing.Size(128, 32);
+            this.buttonScreenShot.Size = new System.Drawing.Size(90, 23);
             this.buttonScreenShot.TabIndex = 20;
             this.buttonScreenShot.Text = "ScreenShot";
             this.buttonScreenShot.UseVisualStyleBackColor = true;
@@ -121,9 +129,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.buttonScreenShot);
             this.Controls.Add(this.pictureBoxScreenShot);
             this.Controls.Add(this.labelScreen);
@@ -132,6 +140,7 @@
             this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -5,7 +5,6 @@ namespace WinFormsTcpApp
 {
     public partial class Form1 : Form
     {
-        private Client client;
         private Server server;
 
         public Form1()
@@ -14,6 +13,7 @@ namespace WinFormsTcpApp
         }
 
         delegate void SetTextCallback(string text);
+        delegate void SetImageCallback(Bitmap image);
 
         public  void textBox1SetText(string text)
         {
@@ -31,38 +31,45 @@ namespace WinFormsTcpApp
             }
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        public void pictureBox1SetText(Image image)
         {
-            client = new Client(this);
-            server = new Server(this);
+            if (pictureBox1.IsDisposed) return;
 
-            var result = await Task.Run(async () =>
+            if (pictureBox1.InvokeRequired)
             {
-                return await NetworkUtil.GetHostsList();
-            });
-            comboBox1.Items.AddRange(result.ToArray());
+                SetImageCallback delegateMethod = new SetImageCallback(pictureBox1SetText);
+
+                pictureBox1.Invoke(delegateMethod, new object[] { image });
+            }
+            else
+            {
+                pictureBox1.Image = image;
+            }
         }
 
-        private void buttonSend_Click(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            var host = textBoxHost.Text;
-            var message = textBoxMessage.Text;
-            var port = decimal.ToInt32(numericClientPort.Value);
-            if ((!string.IsNullOrEmpty(host)) && (!string.IsNullOrEmpty(message)))
-            {
-                client.Send(host, port, message);
-            }
+            server = new Server(this);
+
+            labelMyIp.Text = NetworkUtil.GetMyIp();
         }
 
         private void buttonListen_Click(object sender, EventArgs e)
         {
             var port = decimal.ToInt32(numericServerPort.Value);
             server.Listen(port);
+
+            buttonListen.Enabled = false;
         }
 
         private void buttonCheckIp_Click(object sender, EventArgs e)
         {
             labelMyIp.Text = NetworkUtil.GetMyIp();
+        }
+
+        private void numericServerPort_ValueChanged(object sender, EventArgs e)
+        {
+            buttonListen.Enabled = true;
         }
     }
 }
